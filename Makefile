@@ -27,16 +27,16 @@ CFLAGS= -O2  -I$(srcdir)
 # Generally, we recommend defining any configuration symbols in jconfig.h,
 # NOT via -D switches here.
 # However, any special defines for ansi2knr.c may be included here:
-ANSI2KNRFLAGS= 
+ANSI2KNRFLAGS=
 
 # Link-time cc options:
-LDFLAGS= 
+LDFLAGS=
 
 # To link any special libraries, add the necessary -l commands here.
-LDLIBS= 
+LDLIBS=
 
 # If using GNU libtool, LIBTOOL references it; if not, LIBTOOL is empty.
-LIBTOOL = 
+LIBTOOL =
 # $(O) expands to "lo" if using libtool, plain "o" if not.
 # Similarly, $(A) expands to "la" or "a".
 O = o
@@ -67,7 +67,7 @@ AR2= ranlib
 INSTALL= /usr/bin/install -c
 INSTALL_PROGRAM= ${INSTALL}
 INSTALL_LIB= ${INSTALL} -m 644
-INSTALL_DATA= ${INSTALL} -m 644
+INSTALL_DATA= ${INSTALL} -D -m 644
 
 # End of configurable options.
 
@@ -190,7 +190,7 @@ wrjpgcom: wrjpgcom.$(O)
 
 # Installation rules:
 
-install: cjpeg djpeg jpegtran rdjpgcom wrjpgcom 
+install: cjpeg djpeg jpegtran rdjpgcom wrjpgcom
 	$(INSTALL_PROGRAM) cjpeg $(bindir)/$(binprefix)cjpeg
 	$(INSTALL_PROGRAM) djpeg $(bindir)/$(binprefix)djpeg
 	$(INSTALL_PROGRAM) jpegtran $(bindir)/$(binprefix)jpegtran
